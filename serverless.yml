@@ -1,0 +1,15 @@
+# serverless.yml
+
+service: stargazing
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    WEBHOOK_URL: "https://hooks.slack.com/services/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"
+
+functions:
+  stargazer:
+    handler: handler.stargazer
+    events:
+      - http: POST stargazer
